@@ -1,0 +1,39 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+
+name: Node.js CI
+# attribute, trigger. Worflow triggered on push to and on pull request against master branch
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+# one job in workflow
+jobs:
+  build:
+    # attribute, specifies operating system to run workflow on
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        # attribute, specifies threee builds of node.js
+        node-version: [14.x, 16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    # get code from repo to vm
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+    # set up right version of node.js
+      uses: actions/setup-node@v3
+      with:
+        # point to node version matrix
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    # install dependencies from package-lock.json
+    - run: npm ci
+    # run build script if exist
+    - run: npm run build --if-present
+    # run test framework
+    - run: npm test
