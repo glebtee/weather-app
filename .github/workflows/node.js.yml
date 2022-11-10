@@ -1,68 +1,12 @@
-# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+name: Create and pubclish a Docker image
 
-name: Node.js CI
-# attribute, trigger. Worflow triggered on push to and on pull request against master branch
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches: 
+      - master
 
-# one job in workflow
-jobs:
-  build:
-    # attribute, specifies operating system to run workflow on
-    runs-on: ubuntu-latest
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-2016]
-        # attribute, specifies threee builds of node.js
-        node-version: [14.x, 16.x, 18.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-    steps:
-    # get code from repo to vm
-    - uses: actions/checkout@v3
-    - name: Use Node.js ${{ matrix.node-version }}
-    # set up right version of node.js
-      uses: actions/setup-node@v3
-      with:
-        # point to node version matrix
-        node-version: ${{ matrix.node-version }}
-    # install dependencies from package-lock.json
-    - run: npm ci
-    # run build script if exist
-    - run: npm run build --if-present
-    - uses: actions/upload-artifact@main
-      with:
-        name: webpack artifacts
-        path: public/
-  
-  test:
-    needs: build
-    runs-on: ${{ matrix.os }}
-    
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-2016]
-        node-version: [14.x, 16.x, 18.x]
-
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@main
-        with:
-          name: webpack artifacts
-          path: public
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with: 
-          node-version: ${{ matrix.node-version }}
-      - name: npm install and test
-        run: |
-          npm install
-          npm test
-        env:
-          CI: true
