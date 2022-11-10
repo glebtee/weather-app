@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com
-      - run: |
+      run: |
           npm ${{env.FRONT}} ci
           ls -la
           npm ${{env.FRONT}} publish
