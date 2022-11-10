@@ -1,4 +1,4 @@
-name: Create and pubclish Node packages
+name: Create and publish Node packages
 
 on:
   push:
