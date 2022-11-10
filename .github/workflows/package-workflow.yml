@@ -28,6 +28,7 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com
+          scope: 'frontend'
       - run: cd frontend && ls -la
       - run: npm ci && npm publish
         env:
