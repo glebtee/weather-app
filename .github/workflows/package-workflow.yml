@@ -35,5 +35,5 @@ jobs:
           npm ${{env.FRONT}} ci
           ls -la
           npm ${{env.FRONT}} publish
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
