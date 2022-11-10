@@ -1,4 +1,4 @@
-name: Create and pubclish a Docker image
+name: Create and pubclish Node packages
 
 on:
   push:
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: 14
       - run: npm ${{env.FRONT}} ci
@@ -32,7 +32,7 @@ jobs:
           node-version: 14
           registry-url: https://npm.pkg.github.com
       - run: npm ${{env.FRONT}} ci
-      - run: cd frontend
+      - run: cd ./frontend
       - run: ls -la
       - run: npm publish
         env:
