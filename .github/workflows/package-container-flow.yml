@@ -8,6 +8,8 @@ on:
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  FRONT: --prefix ./frontend/
+  BACK: --prefix ./backend/
 
 
 jobs:
@@ -18,8 +20,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      - run: npm ./frontend/ci
-      - run: npm ./frontend/test
+      - run: npm ${{env.FRONT}} ci
+      - run: npm ${{env.FRONT}} test
   
   publish-gpr:
     needs: build
