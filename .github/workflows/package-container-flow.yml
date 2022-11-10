@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-      - run: npm ci
-      - run: npm test
+      - run: npm ./frontend/ci
+      - run: npm ./frontend/test
   
   publish-gpr:
     needs: build
