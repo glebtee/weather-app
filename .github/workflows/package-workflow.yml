@@ -31,9 +31,8 @@ jobs:
         with:
           node-version: 14
           registry-url: https://npm.pkg.github.com
-        run: |
-          npm ${{env.FRONT}} ci
-          ls -la
-          npm ${{env.FRONT}} publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - run: npm ${{env.FRONT}} ci
+      - run: ls -la
+      - run: npm ${{env.FRONT}} publish
+      env:
+        NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
