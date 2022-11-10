@@ -2,7 +2,8 @@ name: Build and push Docker images to GCR
 
 on:
   push:
-    - master
+    branches:
+      - master
 
 env:
   REGISTRY: ghcr.io
