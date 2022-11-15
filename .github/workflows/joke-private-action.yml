@@ -1,4 +1,4 @@
-name: Run Public DC NJS Actions
+name: Run DC NJS Actions
 
 on: [push]
 
@@ -13,4 +13,4 @@ jobs:
         uses: ./.github/actions/docker-container-action
 
       - name: DAD JOKE
-        uses: glebtee/writing-js-action@bbab1e805d9a937eccd4d6da3a0dadb2693b2c5f
+        uses: glebtee/writing-js-action@7704a8a1c97a7a9af4f8a3f767691e7564783aa9
