@@ -21,10 +21,10 @@ jobs:
       
       - name: Build and Push Front
         run: |
-          docker build -t ghcr.io/glebtee/weatherapp-front:${{ github.sha }} ./frontend
-          docker push ghcr.io/glebtee/weatherapp-front:${{ github.sha }}
+          docker build -t ghcr.io/glebtee/weatherapp-front:latest ./frontend
+          docker push ghcr.io/glebtee/weatherapp-front:latest
 
       - name: Build and Push Back
         run: |
-          docker build -t ghcr.io/glebtee/weatherapp-back:${{ github.sha }} ./backend
-          docker push ghcr.io/glebtee/weatherapp-back:${{ github.sha }}
+          docker build -t ghcr.io/glebtee/weatherapp-back:latest ./backend
+          docker push ghcr.io/glebtee/weatherapp-back:latest

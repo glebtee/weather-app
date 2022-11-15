@@ -1,10 +1,10 @@
 version: "3.9"
 services:
   back:
-    build: ./backend/
+    image: ghcr.io/glebtee/weatherapp-back:latest
     ports:
       - 9000:9000
   front:
-    build: ./frontend/
+    image: ghcr.io/glebtee/weatherapp-front:latest
     ports:
      - 80:80
