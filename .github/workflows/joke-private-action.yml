@@ -11,6 +11,6 @@ jobs:
 
       - name: CONTAINER ACTION
         uses: ./.github/actions/docker-container-action
-        
+
       - name: DAD JOKE
-        uses: ./.github/actions/joke-action
+        uses: glebtee/writing-js-action@bbab1e805d9a937eccd4d6da3a0dadb2693b2c5f
