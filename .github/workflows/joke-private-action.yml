@@ -1,4 +1,4 @@
-name: Run Dad Joke Private Action
+name: Run Public DC NJS Actions
 
 on: [push]
 
