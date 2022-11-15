@@ -1,0 +1,28 @@
+name: Run DC NJS Actions
+
+on: [push]
+
+jobs:
+  Public-Actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: CONTAINER ACTION
+        uses: glebtee/me-docker-container-action@7de47cb39dc1e8f7f439a99b110861eaba4a90f9
+
+      - name: DAD JOKE JS ACTION
+        uses: glebtee/writing-js-action@7704a8a1c97a7a9af4f8a3f767691e7564783aa9
+  
+  Private-Actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: CONTAINER ACTION
+        uses: ./.github/actions/docker-container-action
+      
+      - name: DAD JOKE JS ACTION
+        uses: ./.github/actions/joke-action
