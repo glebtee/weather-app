@@ -12,7 +12,8 @@ jobs:
         with:
           who-to-greet: 'Mona the Octocat'
 
-      - run: echo "::debug:: inputs.who-to-greet"
+      - name: Print inputs
+        run: echo "::debug:: inputs.who-to-greet"
 
       - name: DAD JOKE JS ACTION
         uses: glebtee/writing-js-action@main
