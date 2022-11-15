@@ -11,6 +11,8 @@ jobs:
 
       - name: CONTAINER ACTION
         uses: glebtee/me-docker-container-action@7de47cb39dc1e8f7f439a99b110861eaba4a90f9
+        with:
+          who-to-greet: 'Mona the Octocat'
 
       - name: DAD JOKE JS ACTION
         uses: glebtee/writing-js-action@7704a8a1c97a7a9af4f8a3f767691e7564783aa9
@@ -23,6 +25,8 @@ jobs:
 
       - name: CONTAINER ACTION
         uses: ./.github/actions/docker-container-action
+        with:
+          who-to-greet: 'Mona the Octocat'
       
       - name: DAD JOKE JS ACTION
         uses: ./.github/actions/joke-action

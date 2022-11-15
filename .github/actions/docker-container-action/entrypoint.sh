@@ -1,5 +1,5 @@
 #!/bin/sh -l
 
-echo "Hello, ${GITHUB_INPUT.who-to-greet}"
+echo "Hello, $1"
 time=$(date)
 echo "time=$time" >> $GITHUB_OUTPUT
