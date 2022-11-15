@@ -8,6 +8,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: DAD JOKE / CONTAINER
+      - name: DAD JOKE
         uses: ./.github/actions/joke-action
+        
+      - name: CONTAINER ACTION
         uses: ./.github/actions/docker-container-action
