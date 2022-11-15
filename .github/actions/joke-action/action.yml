@@ -1,7 +1,0 @@
-name: "My Own Private Joke Action"
-
-description: "use an external API to retrieve and display a Joke"
-
-runs:
-  using: "node16"
-  main: "main.js"
