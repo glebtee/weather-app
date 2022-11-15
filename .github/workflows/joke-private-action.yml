@@ -3,10 +3,10 @@ name: Run Local Action Dad Joke
 on: [push]
 
 jobs:
-  runs-on: ubuntu-latest
+  action:
+    runs-on: ubuntu-latest
 
-  steps:
-    action:
+    steps:
       - uses: actions/checkout@v3
       - name: DAD JOKE
         uses: ./.github/actions/joke-action
