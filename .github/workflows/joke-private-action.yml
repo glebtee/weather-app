@@ -3,10 +3,11 @@ name: Run Dad Joke Private Action
 on: [push]
 
 jobs:
-  action:
+  TELL-A-JOKE:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
-      - name: DAD JOKE
+      - name: DAD JOKE / CONTAINER
         uses: ./.github/actions/joke-action
+        uses: ./.github/actions/docker-container-action
