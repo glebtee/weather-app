@@ -9,8 +9,10 @@ jobs:
     steps:
       - name: CONTAINER ACTION
         uses: glebtee/me-docker-container-action@main
-       # with:
-        #  who-to-greet: 'Mona the Octocat'
+        with:
+          who-to-greet: 'Mona the Octocat'
+
+      run: eco "::debug:: inputs.who-to-greet"
 
       - name: DAD JOKE JS ACTION
         uses: glebtee/writing-js-action@main
