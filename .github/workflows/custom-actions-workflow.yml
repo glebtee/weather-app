@@ -7,13 +7,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - run: echo "::debug:: inputs.who-to-greet"
+      
       - name: CONTAINER ACTION
         uses: glebtee/me-docker-container-action@main
         with:
           who-to-greet: 'Mona the Octocat'
-
-      - name: Print inputs
-        run: echo "::debug:: inputs.who-to-greet"
 
       - name: DAD JOKE JS ACTION
         uses: glebtee/writing-js-action@main
