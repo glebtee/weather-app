@@ -1,7 +1,7 @@
 name: Create and publish Node packages
 
 on:
-  push:
+  release:
     branches: 
       - master
 
