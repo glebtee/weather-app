@@ -1,4 +1,4 @@
-name: Run Local Action Dad Joke
+name: Run Dad Joke Private Action
 
 on: [push]
 
