@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
     inputs:
-      print-input:
+      print-out:
         description: 'Will print received input'
         required: true
         type: string
@@ -10,7 +10,7 @@ on:
    print-input:
     runs-on: ubuntu-latest
     steps:
-      run: echo Input is ${{ inputs.puts}}
+      run: echo Input is ${{ inputs.print-out}}
 
   tell-joke:
    runs-on: ubuntu-latest
