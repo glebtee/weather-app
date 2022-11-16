@@ -9,8 +9,9 @@ on:
 jobs:
   print-input:
     runs-on: ubuntu-latest
+
     steps:
-      run: echo Input is ${{ inputs.print-out}}
+      - run: echo Input is ${{ inputs.print-out}}
       
   tell-joke:
     runs-on: ubuntu-latest
