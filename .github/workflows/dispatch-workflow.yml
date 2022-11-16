@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    inputs:
+      print-input:
+        description: 'Will print received input'
+        required: true
+        type: string
+  
+  jobs:
+   print-input:
+    runs-on: ubuntu-latest
+    steps:
+      run: echo Input is ${{ inputs.puts}}
+
+  tell-joke:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Will tell a joke now
+       uses: glebtee/writing-js-action@main
