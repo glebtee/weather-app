@@ -7,13 +7,13 @@ on:
         type: string
   
   jobs:
-   print-input:
-    runs-on: ubuntu-latest
-    steps:
-      run: echo Input is ${{ inputs.print-out}}
+    print-input:
+      runs-on: ubuntu-latest
+      steps:
+        run: echo Input is ${{ inputs.print-out}}
 
-  tell-joke:
-   runs-on: ubuntu-latest
-   steps:
-     - name: Will tell a joke now
-       uses: glebtee/writing-js-action@main
+    tell-joke:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Will tell a joke now
+          uses: glebtee/writing-js-action@main
