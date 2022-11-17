@@ -1,6 +1,6 @@
 name: Run DC NJS Actions
 
-on: [push]
+on: release
 
 jobs:
   Public-Actions:
