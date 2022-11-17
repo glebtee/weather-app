@@ -22,6 +22,7 @@ jobs:
       - name: Build and Push Front
         run: |
           docker build -t ghcr.io/glebtee/weatherapp-front:latest ./frontend
+          echo IMAGE_ID
           docker push ghcr.io/glebtee/weatherapp-front:latest
 
       - name: Build and Push Back
