@@ -18,7 +18,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: cd ./frontend && npm ci
       - name: Publish node packages
-        uses: npm login
+        run: npm login
         with:
           registry-url: https://npm.pkg.github.com/
       - run: npm publish
