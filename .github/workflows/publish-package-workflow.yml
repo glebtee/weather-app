@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: 14
           cache-dependency-path: .frontend/package-lock.json ./frontend/package.json
-      - run: npm ci
+      - run: cd ./frontend && npm ci
       - run: npm test
   
   publish-gpr:
@@ -29,6 +29,7 @@ jobs:
           node-version: 14
           registry-url: https://npm.pkg.github.com
           cache-dependency-path: .frontend/package-lock.json ./frontend/package.json
+      - run: cd ./frontend
       - run: npm ci && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
