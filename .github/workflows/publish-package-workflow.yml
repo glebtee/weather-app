@@ -17,6 +17,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: npm ci --prefix frontend
       - name: Publish node packages
-        run: npm publish -prefix frontend
+        run: npm publish --prefix frontend
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
