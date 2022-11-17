@@ -14,10 +14,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 14
+          registry-url: https://npm.pkg.github.com/
           cache-dependency-path: .frontend/package-lock.json ./frontend/package.json
       - run: cd ./frontend && npm ci
       - name: Publish node packages
-        run: cd ./frontend && npm publish
+        run: cd ./frontend && ls -la && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       
