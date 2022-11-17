@@ -16,19 +16,8 @@ jobs:
           node-version: 14
           cache-dependency-path: .frontend/package-lock.json ./frontend/package.json
       - run: cd ./frontend && npm ci
-  
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - run: cd ./frontend
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 14
-          registry-url: https://npm.pkg.github.com
-          cache-dependency-path: .frontend/package-lock.json ./frontend/package.json
-      - run: cd ./frontend
-      - run: npm ci && npm publish
+      - name: Publish node packages
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      
