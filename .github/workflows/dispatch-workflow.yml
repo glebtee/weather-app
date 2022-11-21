@@ -12,10 +12,13 @@ jobs:
   print-input:
     runs-on: ubuntu-latest
     steps:
-      - run: echo Input is ${{ inputs.print-out}}
+      - run: echo Input is ${{ inputs.print-out }}
       
   tell-joke:
     runs-on: ubuntu-latest
     steps:
       - name: Will tell a joke now
         uses: glebtee/writing-js-action@main
+
+  call-custom-actions-workflow:
+    uses: glebtee/weather-app/.github/workflows/custom-actions-wrokflow.yml@master

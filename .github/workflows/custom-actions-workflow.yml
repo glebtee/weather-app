@@ -1,6 +1,6 @@
 name: Run DC NJS Actions
 
-on: release
+on: workflow_call
 
 jobs:
   Public-Actions:
