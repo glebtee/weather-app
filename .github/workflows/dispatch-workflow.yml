@@ -21,4 +21,4 @@ jobs:
         uses: glebtee/writing-js-action@main
 
   call-custom-actions-workflow:
-    uses: glebtee/weather-app/.github/workflows/custom-actions-wrokflow.yml@master
+    uses: glebtee/weather-app/.github/workflows/custom-actions-workflow.yml@master
