@@ -22,3 +22,6 @@ jobs:
 
   call-custom-actions-workflow:
     uses: glebtee/weather-app/.github/workflows/custom-actions-workflow.yml@master
+  
+  call-workflow-same-repo-syntax:
+    uses: ./.github/workflows/custom-actions-workflow.yml
