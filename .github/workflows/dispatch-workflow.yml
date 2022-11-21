@@ -9,6 +9,8 @@ on:
         type: string
   
 jobs:
+  debug-output:
+    - run: echo "${{ inputs.print-out }}"
   print-input:
     runs-on: ubuntu-latest
     steps:
