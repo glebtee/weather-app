@@ -1,0 +1,1 @@
+![Dispatching a workflow](https://github.com/glebtee/weather-app/actions/workflows/dispatch-workflow.yml/badge.svg)
