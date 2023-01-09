@@ -10,7 +10,7 @@
     "lint": "eslint src/*.js"
   },
   "dependencies": {
-    "debug": "^4.1.1",
+    "debug": "^4.3.4",
     "kcors": "^2.2.2",
     "koa": "^2.13.0",
     "koa-json": "^2.0.2",
